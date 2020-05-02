@@ -3,3 +3,12 @@ I have made one self-hosted file sync and share server in which I have used a cl
 
 # What is OwnCloud 
 ownCloud is a self-hosted file sync and share server. It provides access to your data through a web interface, sync clients or WebDAV while providing a platform to view, sync and share across devices easily—all under your control. ownCloud’s open architecture is extensible via a simple but powerful API for applications and plugins and it works with any storage.
+
+# Troubleshooting the errors
+If you face any error while launching docker-compose then run this two commands in terminal
+  -- systemctl stop firewalld
+  -- systemctl restart docker
+  
+# Note
+-- This project was build on Redhat 8
+-- Please use Bridge Adapter in Networks if Running on Virtual Machine
