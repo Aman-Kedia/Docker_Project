@@ -6,7 +6,7 @@ ownCloud is a self-hosted file sync and share server. It provides access to your
 
 # Troubleshooting the errors
 If you face any error while launching docker-compose then run this two commands in terminal
-  -- systemctl stop firewalld
+                                                                          -- systemctl stop firewalld
   -- systemctl restart docker
   
 # Note
