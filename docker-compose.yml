@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+
+  mysql_os:
+    image: mysql
+    restart: always
+    volumes:
+      - mysql_storage:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: aman
+      MYSQL_USER_PASSWORD: redhat
+      MYSQL_DATABASE: ownclouddb
+
+
+  owncloud_os:
+    image: owncloud
+    restart: always
+    depends_on:
+      - mysql_os
+    ports:
+      - 8080:80
+    environment:
+      OWNCLOUD_DB_TYPE: mysql
+      OWNCLOUD_DB_NAME: ownclouddb
+      OWNCLOUD_DB_USERNAME: aman
+      OWNCLOUD_DB_PASSWORD: redhat
+      OWNCLOUD_DB_HOST: mysql_os
+    volumes:
+      - owncloud_storage:/mnt/data
+
+
+
+volumes:
+  mysql_storage:
+  owncloud_storage:
+
+
+
